@@ -3,6 +3,8 @@ import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Cookie, Refrigerator } from "lucide-react";
+import UserDropdown from "./UserDropdown";
 
 const Header = async() => {
 
@@ -12,14 +14,30 @@ const Header = async() => {
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
 
         <Link href={user ? "/dashboard" : "/"}>
-          <Image src = "/orangelogo.png" alt="logo" width={80} height={80} className="w-16"/>
+          <Image src = "/orangelogo.png" alt="logo" width={80} height={80} className="w-30"/>
         </Link>
 
-        <div>NavLinks</div>
-        <div className="flex space-x-4 item-center">
+{/* Navigation links */}
+        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
+          <Link
+            href="/recipes"
+            className="hover:text-orange-600 transition-colors flex gap-1.5 items-center"
+          >
+            <Cookie className="w-4 h-4" />
+            My Recipes
+          </Link>
+          <Link
+            href="/pantry"
+            className="hover:text-orange-600 transition-colors flex gap-1.5 items-center"
+          >
+            <Refrigerator className="w-4 h-4" />
+            My Pantry
+          </Link>
+        </div>
 
+        <div className="flex space-x-4 item-center">
           <Show when="signed-in">
-            <UserButton />
+            <UserDropdown/>
           </Show>
 
           <Show when="signed-out">
