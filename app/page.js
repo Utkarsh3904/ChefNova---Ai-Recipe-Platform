@@ -8,6 +8,7 @@ export default function Home() {
           <Button variant="primary" size="lg">
             Destructive
           </Button>
+
         </div>
       </section>
     </div>
