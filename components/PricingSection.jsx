@@ -13,7 +13,7 @@ const PricingSection = () => {
             </p> 
         </div>
 
-        <div className=' mx-auto'>
+        <div className=' mx-auto '>
             <PricingTable 
                         checkoutProps={{
                           appearance:{
