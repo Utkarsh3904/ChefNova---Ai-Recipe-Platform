@@ -26,7 +26,7 @@ export default async function Home() {
                 #1 AI Cooking Assistant
               </Badge>
 
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-[0,9] tracking-tight">
+              <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-[0.9] tracking-tight">
                 Turn your{" "}
                 <span className="italic underline decoration-4 decoration-orange-600 ">
                   leftovers
@@ -204,7 +204,7 @@ export default async function Home() {
       </section>
 
       {/* Pricing - Now Using Component */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 max-w-6xl mx-auto ">
         <PricingSection subscriptionTier={subscriptionTier} />
       </section>
     </div>
