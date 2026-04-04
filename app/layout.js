@@ -16,11 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider   appearance={{theme: neobrutalism,}}>
-    <html lang="en" suppressHydrationWarning> 
-                        {/* notice the supress hydration warning for during devlopment */}
+    <html lang="en" suppressHydrationWarning>  
+                  {/* notice the supress hydration warning for during devlopment */}
       <body
         className={`${inter.className}`}>
-
 
           <Header/>
           <main className="min-h-screen"> {children} </main>
