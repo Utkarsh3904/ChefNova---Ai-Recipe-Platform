@@ -195,7 +195,7 @@ export default async function Home() {
                   </div>
                 </div>
                 {i < HOW_IT_WORKS_STEPS.length - 1 && (
-                  <hr className="my-8 bg-stone-700" />
+                  <hr className="my-8 bg-stone-700 " />
                 )}
               </div>
             ))}
