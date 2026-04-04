@@ -22,6 +22,7 @@ export default async function DashboardPage() {
   const areas = areasData?.areas || [];
 
   return (
+    
     <div className="min-h-screen bg-stone-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -102,7 +103,7 @@ export default async function DashboardPage() {
                       <div className="flex flex-wrap gap-2 mb-6">
                         {recipeOfTheDay.strTags
                           .split(",")
-                          .slice(0, 3)
+                          .slice(0, 2)
                           .map((tag, i) => (
                             <Badge
                               key={i}
@@ -142,7 +143,7 @@ export default async function DashboardPage() {
                 key={category.strCategory}
                 href={`/recipes/category/${category.strCategory.toLowerCase()}`}
               >
-                <div className="bg-white p-6 border-2 border-stone-200 hover:border-orange-600 hover:shadow-lg transition-all text-center group cursor-pointer">
+                <div className="bg-white p-6 border-2 border-orange-200 hover:border-orange-600 hover:shadow-lg transition-all text-center group cursor-pointer">
                   <div className="text-4xl mb-3">
                     {getCategoryEmoji(category.strCategory)}
                   </div>
@@ -167,6 +168,7 @@ export default async function DashboardPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            
             {areas.map((area) => (
               <Link
                 key={area.strArea}
@@ -174,6 +176,7 @@ export default async function DashboardPage() {
                   .toLowerCase()
                   .replace(/\s+/g, "-")}`}
               >
+
                 <div className="bg-stone-50 p-5 border-2 border-stone-200 hover:border-orange-600 hover:shadow-lg transition-all group cursor-pointer">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">
