@@ -15,7 +15,7 @@ const PricingModal = ({ subscriptionTier = "free", children }) => {
        
     <Dialog isOpen={isOpen} onOpenChange={canOpen ? setIsOpen : undefined }>
       <form>
-        <DialogTrigger >
+        <DialogTrigger asChild >
             {children}
         </DialogTrigger>
         <DialogContent className="p-8 pt-4 sm:max-w-4xl">
