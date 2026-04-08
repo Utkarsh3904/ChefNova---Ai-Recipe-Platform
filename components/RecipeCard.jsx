@@ -14,6 +14,7 @@ import {
 
 export default function RecipeCard({ recipe, variant = "default" }) {
   // Handle different recipe data structures
+
   const getRecipeData = () => {
     // For MealDB recipes (category/cuisine pages)
     if (recipe.strMeal) {
