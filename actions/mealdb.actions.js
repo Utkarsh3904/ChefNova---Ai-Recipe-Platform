@@ -72,7 +72,7 @@ export async function getAreas() {
 export async function getMealsByCategory(category) {
   try {
     const response = await fetch(`${MEALDB_BASE}/filter.php?c=${category}`, {
-      next: { revalidate: 86400 }, // Cache for 24 hours
+      next: { revalidate: 86400 },  // Cache for 24 hours
     });
 
     if (!response.ok) {
