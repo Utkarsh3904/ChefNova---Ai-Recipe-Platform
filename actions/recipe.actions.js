@@ -382,12 +382,17 @@ export async function saveRecipeToCollection(formData) {
         Authorization: `Bearer ${STRAPI_API_TOKEN}`,
       },
       body: JSON.stringify({
-        data: {
-          user: user.id,
-          recipe: recipeId,
-          savedAt: new Date().toISOString(),
+        //CHANGED
+      data: {
+        users_permissions_user: {
+          connect: [{ id: user.id }]
         },
-      }),
+        recipe: {
+          connect: [{ id: recipeId }]
+        },
+        savedAt: new Date().toISOString(),
+      },
+    }),
     });
 
     if (!saveResponse.ok) {
