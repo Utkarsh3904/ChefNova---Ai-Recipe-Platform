@@ -103,7 +103,8 @@ export async function getOrGenerateRecipe(formData) {
 
         // Check if user has saved this recipe
         const savedRecipeResponse = await fetch(
-          `${STRAPI_URL}/api/saved-recipes?filters[user][id][$eq]=${user.id}&filters[recipe][id][$eq]=${searchData.data[0].id}`,
+          //CHANGED
+          `${STRAPI_URL}/api/saved-recipes?filters[users_permissions_user][id][$eq]=${user.id}&filters[recipe][id][$eq]=${searchData.data[0].id}`,
           {
             headers: {
               Authorization: `Bearer ${STRAPI_API_TOKEN}`,
@@ -431,7 +432,8 @@ export async function removeRecipeFromCollection(formData) {
 
     // Find saved recipe relation
     const searchResponse = await fetch(
-      `${STRAPI_URL}/api/saved-recipes?filters[user][id][$eq]=${user.id}&filters[recipe][id][$eq]=${recipeId}`,
+      //CHANGED
+      `${STRAPI_URL}/api/saved-recipes?filters[users_permissions_user][id][$eq]=${user.id}&filters[recipe][id][$eq]=${recipeId}`,
       {
         headers: {
           Authorization: `Bearer ${STRAPI_API_TOKEN}`,
@@ -610,7 +612,8 @@ export async function getSavedRecipes() {
 
     // Fetch saved recipes with populated recipe data
     const response = await fetch(
-      `${STRAPI_URL}/api/saved-recipes?filters[user][id][$eq]=${user.id}&populate[recipe][populate]=*&sort=savedAt:desc`,
+      //CHANGED
+      `${STRAPI_URL}/api/saved-recipes?filters[users_permissions_user][id][$eq]=${user.id}&populate[recipe][populate]=*&sort=savedAt:desc`,
       {
         headers: {
           Authorization: `Bearer ${STRAPI_API_TOKEN}`,
