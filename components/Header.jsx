@@ -37,7 +37,7 @@ const Header = async() => {
           </Link>
         </div>
 
-        <div className="flex space-x-4 item-center">
+        <div className="flex space-x-4 item-center"> 
           <Show when="signed-in">
 
             {user && (<PricingModal  subscriptionTier = {user.subscriptionTier}>
