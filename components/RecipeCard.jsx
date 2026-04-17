@@ -56,7 +56,7 @@ export default function RecipeCard({ recipe, variant = "default" }) {
         servings: recipe.servings,
         image: recipe.imageUrl,
         href: `/recipe?cook=${encodeURIComponent(recipe.title)}`,
-        showImage: !!recipe.imageUrl,
+        showImage: !!recipe.imageUrl, 
       };
     }
 
