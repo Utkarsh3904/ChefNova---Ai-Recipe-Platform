@@ -9,8 +9,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
-  const { has } = await auth();
-  const subscriptionTier = has({ plan: "pro" }) ? "pro" : "free";
+  let subscriptionTier = "free";
+
+  try {
+    const { has } = await auth();
+    subscriptionTier = has({ plan: "pro" }) ? "pro" : "free";
+  } catch (error) {
+    console.error("Failed to read Clerk auth state on home page:", error);
+  }
+
   return (
     <div className="min-h-screen bg-stone-50 text-stone-900">
       {/* herosection */}
