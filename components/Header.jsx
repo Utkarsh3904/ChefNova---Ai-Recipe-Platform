@@ -1,6 +1,5 @@
 import React from "react";
 import { SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
-
 import { Button } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +10,12 @@ import PricingModal from "./PricingModal";
 import { Badge } from "./ui/badge";
 
 const Header = async () => {
-  const user = await checkUser();
+  let user = null;
+  try {
+    user = await checkUser();
+  } catch {
+    user = null;
+  }
 
   return (
     <header className="fixed top-0 w-full border-b border-stone-200 bg-stone-50/80 backdrop-blur-md z-50 supports-backdrop-filter:bg-stone-50/60">
@@ -26,7 +30,6 @@ const Header = async () => {
           />
         </Link>
 
-        {/* Navigation links */}
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
           <Link
             href="/recipes"
