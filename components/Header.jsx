@@ -1,5 +1,6 @@
 import React from "react";
-import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
+import { SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
+
 import { Button } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
