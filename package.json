@@ -13,7 +13,7 @@
     "@clerk/ui": "^1.2.2",
     "@google/generative-ai": "^0.24.1",
     "@neondatabase/serverless": "^0.10.4",
-    "@react-pdf/renderer": "^4.3.2",
+    "@react-pdf/renderer": "^4.5.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
