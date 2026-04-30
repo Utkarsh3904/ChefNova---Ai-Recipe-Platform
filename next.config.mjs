@@ -3,7 +3,8 @@ const nextConfig = {
   experimental: {
     serverComponentsHmrCache: false,
   },
-  images: {
+  output: "standalone", //add
+  images: { 
     remotePatterns: [
       {
         protocol: "https",

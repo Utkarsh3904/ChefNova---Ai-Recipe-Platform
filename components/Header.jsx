@@ -1,6 +1,5 @@
 import React from "react";
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { SignedIn, SignedOut } from "@clerk/nextjs/server";import { Button } from "./ui/button";
+import { SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { Cookie, Refrigerator, Sparkles } from "lucide-react";
