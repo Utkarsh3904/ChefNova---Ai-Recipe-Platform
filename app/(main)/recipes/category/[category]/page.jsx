@@ -1,20 +1,19 @@
-"use client"
+"use client";
 
 import { getMealsByCategory } from "@/actions/mealdb.actions";
 import RecipeGrid from "@/components/RecipeGrid";
 import { useParams } from "next/navigation";
 
+export default function CategoryRecipesPage() {
+  const params = useParams();
+  const category = params.category;
 
-export default function CategoryRecipesPage(){
-    const params = useParams();
-    const category = params.category;
-
-    return (
-        <RecipeGrid
-            category="category"
-            value = {category}
-            fetchAction = {getMealsByCategory}
-            backLink = "/dashboard"
-            />
-    )
+  return (
+    <RecipeGrid
+      type="category"
+      value={category}
+      fetchAction={getMealsByCategory}
+      backLink="/dashboard"
+    />
+  );
 }
